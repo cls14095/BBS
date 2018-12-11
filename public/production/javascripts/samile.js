@@ -1,0 +1,1 @@
+var sample=function(l){l+="HOGE",console.log(l)};sample();
