@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>BBS@dist</title>
+
+  <%- include("../_share/stylesheets.ejs") %>
+
+</head>
+
+<body>
+  <%- include("../_share/navbar.ejs") %>
+
+  <main role="main" class="container">
+
+    <form method="POST" action="/login/authenticate">
+      <div class="border-bottom mt-5 mb-5">
+        <h1>ログイン</h2>
+      </div>
+
+      <div class="form-group row">
+        <label for="username" class="col-sm-2 col-form-label">Username: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="username" name="username" />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="password" class="col-sm-2 col-form-label">Password: </label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="password" name="password" />
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-1">
+          <input type="submit" class="btn btn-primary" value="登録" />
+        </div>
+      </div>
+
+      <% if ( message && message.length !== 0 ) {%>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+      <% } %>
+    </form>
+
+  </main><!-- /.container -->
+
+  <%- include("../_share/javascripts.ejs") %>
+</body>
+
+</html>
