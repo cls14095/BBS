@@ -1,9 +1,9 @@
 var { SESSION_SECRET_KEY } = require("./config/app.config.js").security;
-var Authenticator = require("./lib/security/account-controll");
+var authenticator = require("./lib/auth/athenticator");
 var express = require("express");
+var bodyParser = require("body-parser");
 var session = require("express-session");
 var flash = require("connect-flash");
-var bodyParser = require("body-parser");
 
 
 var app = express();
@@ -20,11 +20,12 @@ app.use(session({
   name: "sid",
 }));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(flash());
-Authenticator.initialize(app);
-Authenticator.setStrategy();
+app.use(...authenticator.initialize());
 
 app.use("/", require("./routes/index.js"));
+app.use("/signup", require("./routes/signup.js"));
 app.use("/login", require("./routes/login.js"));
 
 
