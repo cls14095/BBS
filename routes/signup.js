@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
     res.render("./account/signup.ejs", { errors });
   }
   else {
-    //TODO:DBにデータ登録
+    userRegister.registUserData(req.body.username, req.body.password);
     res.redirect("./complete");
   }
 });
