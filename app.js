@@ -28,6 +28,7 @@ app.use("/", require("./routes/index.js"));
 app.use("/home", require("./routes/home.js"));
 app.use("/signup", require("./routes/signup.js"));
 app.use("/login", require("./routes/login.js"));
+app.use("/logout", require("./routes/logout.js"));
 
 
 

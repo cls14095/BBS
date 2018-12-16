@@ -26,8 +26,11 @@
       </div>
 
       <% if (isAuthenticated) {%>
-      <%- include("./post/post-form.ejs") %>
+      <%- include("./post/form.ejs") %>
       <% } %>
+
+      <%- include("./post/list.ejs") %>
+
     </div>
 
 
