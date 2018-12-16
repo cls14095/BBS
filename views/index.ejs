@@ -12,13 +12,26 @@
 </head>
 
 <body>
+  <% if (!isAuthenticated) {%>
   <%- include("./_share/navbar.ejs") %>
+  <% } else {%>
+  <%- include("./_share/navbar-auth.ejs") %>
+  <% } %>
 
   <main role="main" class="container">
 
-    <div class="border-bottom mt-5 mb-5">
-      <h1>過去の掲示板履歴</h1>
+    <div class="justify-content-center">
+      <div class="border-bottom mt-5 mb-5">
+        <h1>過去の掲示板履歴</h1>
+      </div>
+
+      <% if (isAuthenticated) {%>
+      <%- include("./post/post-form.ejs") %>
+      <% } %>
     </div>
+
+
+
 
   </main><!-- /.container -->
 

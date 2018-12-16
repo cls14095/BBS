@@ -25,6 +25,7 @@ app.use(flash());
 app.use(...authenticator.initialize());
 
 app.use("/", require("./routes/index.js"));
+app.use("/home", require("./routes/home.js"));
 app.use("/signup", require("./routes/signup.js"));
 app.use("/login", require("./routes/login.js"));
 
